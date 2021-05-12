@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 may. 2021 5:43:05 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibernate_jpa_revMode.Coches" table="coches" catalog="hibernate_test" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="persona" class="hibernate_jpa_revMode.Persona" fetch="select">
+            <column name="id_persona" not-null="true" />
+        </many-to-one>
+        <property name="matricula" type="string">
+            <column name="matricula" length="40" not-null="true" />
+        </property>
+        <property name="marca" type="string">
+            <column name="marca" length="40" not-null="true" />
+        </property>
+        <property name="color" type="string">
+            <column name="color" length="40" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
